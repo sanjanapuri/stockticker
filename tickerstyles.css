@@ -1,0 +1,25 @@
+.box{
+	width: 400px;
+    border: 15px solid green;
+  	padding: 50px;
+}
+
+h1{
+	text-align: center;
+	font-family: 'Sorts Mill Goudy', serif;
+	padding-top: 20px;
+	font-size: 40px;
+}
+
+p{
+	font-family: 'Sorts Mill Goudy', serif;	
+	font-size: 20px;
+	text-align: center; 
+}
+
+h2{
+	font-family: 'Sorts Mill Goudy', serif;	
+	font-size: 20px;
+	text-align: center;
+	color: #FF0000; 
+}

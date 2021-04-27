@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Ticker Form</title>
+	<link rel="stylesheet" href="tickerstyles.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&display=swap" rel="stylesheet">
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function(){
+		$("input[name=t_or_n]").on('click', function(){
+			if($(this).is(':checked') && $(this).val() == 'company'){
+  				$("#company").css("display", "block");
+  				$("#ticker").css("display", "none");  
+  			} else if($(this).is(':checked') && $(this).val() == 'ticker'){
+  				$("#company").css("display", "none"); 
+  				$("#ticker").css("display", "block"); 
+  			}
+		});
+
+		if (performance.navigation.type == 2) { //when back button is clicked
+			$("#radio1").prop('checked', true);
+			$("#radio2").prop('checked', false);
+    	}
+	});
+</script>
+<body>
+	<div class="box">
+		<h1>Stock Ticker App</h1>
+		<form method="post" action="http://localhost:8080/process">
+			<p> 
+				<input type="radio"  name="t_or_n"  id="radio1" value = "company" checked="checked"/>Company Name  
+				<input type="radio"  name="t_or_n"  id="radio2" value = "ticker"/>
+				Stock Ticker 
+			</p>
+			<p class="message" id="company">Enter the COMPANY NAME here:</p>
+			<p class="message" id="ticker" style="display:none">Enter the STOCK TICKER here:</p>
+			<p>
+				<input type = "text" name="entry"/>
+				<br><br>
+				<input type = "submit" name="submit" value="Submit Form"/>
+			</p>
+		</form>
+	</div>
+</body>
+</html>
